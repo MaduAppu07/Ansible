@@ -1,0 +1,38 @@
+---
+ - hosts: all
+   tasks:
+   - name: task1
+     debug: 
+       msg: task1
+     tags:
+       - dev
+       - app
+   - name: task2
+     debug:
+       msg: task2
+     tags: 
+       - dev
+       - app
+   - name: task3
+     debug:
+       msg: task3
+     tags:
+       - prod
+       - db
+   - name: task4
+     debug:
+       msg: task4
+     tags:
+       - stage
+       - web
+   - name: task5
+     debug:
+       msg: task5
+     tags:
+       - stage
+       - web
+   - name: task6
+     debug:
+       msg: task6
+     tags:
+       - simulation
