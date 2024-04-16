@@ -1,0 +1,13 @@
+---
+ - hosts: rd
+   become: yes
+   tasks:
+   - name: installing multiple packages on uuubuntu and redhat machine using package module
+     package:
+       name: "{{ item }}"
+       state: present
+     loop:
+       - git
+       - nano
+       - wget
+       - unzip

@@ -1,0 +1,25 @@
+---
+ - hosts: all
+   vars:
+     URL: google.com   #string var
+     location:         #list var
+       - Bijapur
+       - Benglore
+       - Mysore
+     credentials:      #dictionary var
+        username: maduappu
+        password: maduappu143
+   tasks:
+   - name: access the print string variables
+     debug:
+       msg: URL = "{{URL}}"
+   - name: access and print list variable
+     debug:
+       msg: location = "{{ location[0] }}"
+   - name: access and print dictionary
+     debug:
+       msg: username = "{{credentials.username}}"
+       msg: password = "{{credentials.password}}"
+       #msg: username = "{{credentials['username']}}"
+       #msg: password = "{{credentials['password']}}"
+

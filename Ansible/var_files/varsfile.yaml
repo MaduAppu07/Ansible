@@ -1,0 +1,21 @@
+---
+ - hosts: rd
+   become: yes
+   vars_files:
+      - vartest.yaml
+     #pkg: nano
+   tasks:
+   - name: install '{{ pkg }}'
+     yum:
+       name: "{{ pkg }}"
+       state: present
+   - name: install '{{ pkg2 }}'
+     yum:
+       name: "{{ pkg2 }}"
+       state: present
+   - name: install '{{ pkg3 }}'
+     yum:
+       name: "{{ pkg3 }}"
+       state: present
+     #vars:
+      # pkg: wget

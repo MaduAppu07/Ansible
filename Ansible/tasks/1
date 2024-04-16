@@ -1,0 +1,12 @@
+---
+ - hosts: all
+   tasks:
+   - name: include task1
+     ainsible.builtin.include_tasks: task1.yaml
+   - name: include task2
+     include_tasks: task2.yaml
+   - name: include task3
+     include_tasks: task3.yaml
+   - name: include task4
+     include_tasks: task4.yaml
+

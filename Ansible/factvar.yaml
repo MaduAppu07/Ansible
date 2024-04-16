@@ -1,0 +1,6 @@
+---
+ - hosts: all
+   tasks:
+   - name: printing facts variables
+     debug: 
+       msg: "{{ansible_distribution}}"

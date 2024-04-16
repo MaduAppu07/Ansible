@@ -1,0 +1,28 @@
+---
+ - hosts: rd
+   become: yes
+   vars_prompt:
+     - name: pkg
+       prompt: Enter the first package name
+       private: no
+     - name: pkg2
+       prompt: Enter the second package name
+       private: no
+     - name: pkg3
+       prompt: Enter the third package name
+       private: no
+   tasks:
+   - name: install '{{ pkg }}'
+     yum:
+       name: "{{ pkg }}"
+       state: present
+   - name: install '{{ pkg2 }}'
+     yum:
+       name: "{{ pkg2 }}"
+       state: present
+   - name: install '{{ pkg3 }}'
+     yum:
+       name: "{{ pkg3 }}"
+       state: present
+     #vars:
+      # pkg: wget

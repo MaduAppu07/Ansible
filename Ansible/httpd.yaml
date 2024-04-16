@@ -1,0 +1,17 @@
+---
+ - hosts: rd
+   become: yes
+   tasks:
+   - name: install httpd
+     yum:
+       name: httpd
+       state: present
+       update_cache: yes
+   - name: deployment
+     copy:
+       src: index.html
+       dest: /var/www/html
+   - name: restart httpd
+     service:
+        name: httpd
+        state: restarted

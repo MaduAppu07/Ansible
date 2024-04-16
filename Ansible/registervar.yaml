@@ -1,0 +1,9 @@
+---
+ - hosts: all
+   tasks: 
+   - name: listing content
+     command: ls -l
+     register: out
+   - name: printing register variables
+     debug: 
+       msg: "{{ out }}"

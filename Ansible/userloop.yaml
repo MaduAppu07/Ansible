@@ -1,0 +1,13 @@
+---
+ - hosts: rd
+   become: yes
+   tasks:
+   - name: installing multiple packages
+     user:
+       name: "{{ item }}"
+       password: "admin123"
+     loop:
+       - madu
+       - appu
+       - swapna
+       - madhu

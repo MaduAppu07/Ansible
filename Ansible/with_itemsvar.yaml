@@ -1,0 +1,13 @@
+---
+ - hosts: rd
+   become: yes
+   tasks:
+   - name: installing multiple users
+     user:
+       name: "{{ item }}"
+       password: "admin123"
+     with_items:
+       - appu
+       - madu
+       - swapna
+       - madhu

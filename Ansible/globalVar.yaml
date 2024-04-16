@@ -1,0 +1,11 @@
+---
+ - hosts: rd
+   become: yes
+   vars:
+     pkg: nano
+   tasks:
+   - name: install '{{ pkg }}'
+     yum:
+       name: httpd
+       state: present
+       update_cache: yes

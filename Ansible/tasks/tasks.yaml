@@ -1,0 +1,22 @@
+---
+ - hosts: all
+   tasks:
+   - name: task1
+     debug: 
+       msg: task1
+   - name: task2
+     debug:
+       msg: task2
+   - name: task3
+     debug:
+       msgg: task3
+     ignore_errors: true
+   - name: task4
+     debug:
+       msg: task4
+   - name: task5
+     debug:
+       msg: task5
+   - name: task6
+     debug:
+       msg: task6

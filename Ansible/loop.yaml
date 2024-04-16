@@ -1,0 +1,13 @@
+---
+ - hosts: rd
+   become: yes
+   tasks:
+   - name: installing multiple packages
+     yum:
+       name: "{{ item }}"
+       state: present
+     loop:
+       - wget
+       - nano
+       - wget
+       - unzip

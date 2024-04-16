@@ -1,0 +1,17 @@
+---
+ - hosts: ub
+   become: yes
+   tasks:
+   - name: install apache2
+     apt:
+       name: apache2
+       state: present
+       update_cache: yes
+   - name: deployment
+     copy:
+       src: index.html
+       dest: /var/www/html
+   - name: restart apache2
+     service:
+        name: apache2
+        state: restarted
