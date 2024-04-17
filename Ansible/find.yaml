@@ -1,0 +1,12 @@
+---
+ - hosts: all
+   become: yes
+   tasks: 
+   - name: find the list of files
+     find:
+       path: /home/ansible
+       file_type: file
+     register: out
+   - name: print
+     debug:
+       msg: "{{ out.files }}"

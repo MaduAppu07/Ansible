@@ -1,0 +1,9 @@
+---
+ - hosts: all
+   become: yes
+   tasks: 
+   - name: lineinfile
+     lineinfile:
+       path: /tmp/file1.txt
+       line: "hellow welcome to india"
+       create: yes
