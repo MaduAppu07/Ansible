@@ -1,0 +1,17 @@
+---
+ - hosts: ub
+   become: yes
+   become_user: ansible
+   tasks:
+     - name: send summmary mail
+       local_action:
+         module: mail
+         host: smtp.gmail.com
+         port: 587
+         username: msgurumath7@gmail.com
+         password: "fkxf hhkj cuou olmb"
+         subject: "offer letter"
+         to: msgurumath7@gmail.com
+         body: "congratulations, you got offer letter"
+         secure: starttls
+       run_once: true
